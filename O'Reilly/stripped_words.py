@@ -22,7 +22,7 @@ def checkio(text):
     print("text1", text)
     text = text.upper()
     #quickly remove all words with numbers
-    print("before removing fucking numbers", text)
+    
     text = text.split(" ")
     temp_list = [] #ill gather unwanted number items here to remove later
     for word in text:
@@ -33,12 +33,12 @@ def checkio(text):
         if item in text:
             text.remove(item)
     text = " ".join(text)
-    print("after removing fucking numvbers", text)
+    
     #finished here with removing numbers
     text = re.sub("[AEIOUY]", "0", text)
     text = re.sub("[BCDFGHJKLMNPQRSTVWXZ]", "1", text)    
     binary_list = text.split(" ")
-    print("binary list 1", binary_list)
+    
     for i in binary_list:
         if not "0" in i or not "1" in i:
             binary_list.remove(i)
